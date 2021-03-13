@@ -1,0 +1,31 @@
+{
+  "name": "bank-directory",
+  "version": "1.0.1",
+  "description": "Directory with bank details can be used for verification of IFSC, MICR, fetching supplementary bank details.",
+  "main": "server.js",
+  "scripts": {
+    "test": "NA"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratoontech/Bank-Directory.git"
+  },
+  "keywords": [
+    "banks",
+    "directory",
+    "ifsc",
+    "micr",
+    "rpa",
+    "search"
+  ],
+  "author": "Ratoon Technologies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ratoontech/Bank-Directory/issues"
+  },
+  "homepage": "https://github.com/ratoontech/Bank-Directory#readme",
+  "dependencies": {
+    "electron-db": "^0.15.7",
+    "express": "^4.17.1"
+  }
+}
