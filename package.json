@@ -26,6 +26,7 @@
   "homepage": "https://github.com/ratoontech/Bank-Directory#readme",
   "dependencies": {
     "electron-db": "^0.15.7",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "util": "^0.12.3"
   }
 }
