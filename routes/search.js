@@ -1,9 +1,18 @@
 //initializing express router for serving as endpoint
 const searchEndpoint = require('express').Router();
 
+//import search banks function
+const searchBank = require('../logic/search-record')
+
 //default search endpoint
 searchEndpoint.get('/', (req, res) => {
-    res.send("IFSC code to search is missing...")
+    const bank = req.query.bank;
+    const _branch = req.query.branch;
+    searchBank(bank).then(
+        (bank) => res.send(
+            bank.filter((branch) => 
+                branch.BRANCH === _branch.toUpperCase())
+                ));
 });
 
 //import search ifsc function
@@ -26,15 +35,13 @@ searchEndpoint.get('/micr/:micr',(req,res) => {
     });
 });
 
-//import search banks function
-const searchBank = require('../logic/search-record')
-
 //search bankname with path param endpoint
 searchEndpoint.get('/banks/:bank', (req,res) => {
     searchBank(req.params.bank).then((result) => {
         return res.send(result);
     });
 });
+
 
 //exporting module
 module.exports = searchEndpoint;
