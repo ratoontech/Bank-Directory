@@ -2,13 +2,13 @@
 const searchEndpoint = require('express').Router();
 
 //import search banks function
-const searchBank = require('../logic/search-record')
+const searchByField = require('../logic/search-record')
 
 //default search endpoint
 searchEndpoint.get('/', (req, res) => {
     const bank = req.query.bank;
     const _branch = req.query.branch;
-    searchBank(bank).then(
+    searchByField(bank).then(
         (bank) => res.send(
             bank.filter((branch) => 
                 branch.BRANCH === _branch.toUpperCase())
@@ -31,17 +31,40 @@ const searchMICR = require('../logic/search-micr');
 //search micr with path param endpoint
 searchEndpoint.get('/micr/:micr',(req,res) => {
     searchMICR(Number(req.params.micr)).then((result) => {
-        return res.send(result);
+        res.send(result);
     });
 });
 
 //search bankname with path param endpoint
 searchEndpoint.get('/banks/:bank', (req,res) => {
-    searchBank(req.params.bank).then((result) => {
-        return res.send(result);
+    searchByField('BANK', req.params.bank).then((result) => {
+        res.send(result);
     });
 });
 
+searchEndpoint.get('/branch/:branch', (req,res) => {
+    searchByField('BRANCH', req.params.branch).then((result) => {
+        res.send(result);
+    });
+});
+
+searchEndpoint.get('/city/:city', (req,res) => {
+    searchByField('CITY', req.params.city).then((result) => {
+        res.send(result);
+    });
+});
+
+searchEndpoint.get('/district/:district', (req,res) => {
+    searchByField('DISTRICT', req.params.district).then((result) => {
+        res.send(result);
+    });
+});
+
+searchEndpoint.get('/state/:state', (req,res) => {
+    searchByField('STATE', req.params.state).then((result) => {
+        res.send(result);
+    });
+});
 
 //exporting module
 module.exports = searchEndpoint;
