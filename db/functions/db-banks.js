@@ -14,4 +14,15 @@ const getMatchingRows = (condition) => {
     });
 };
 
-module.exports = { getMatchingRows };
+const searchRecord = (jsonField,keyword) => {
+    return new Promise( (resolve,reject) => {
+        db.search(config.db, config.path, jsonField, keyword,(succ,data) => {
+                return resolve(data);
+        });
+    });
+};
+
+module.exports = { 
+    getMatchingRows,
+    searchRecord
+};
