@@ -3,10 +3,8 @@ const { getMatchingRows } = require('../db/functions/db-banks');
 
 //fetch bank details for micr
 const searchMICR = (MICRCODE) => {
-    return getMatchingRows({ MICRCODE }).then((data) => {
-        return data;
-    });
+    return getMatchingRows({ MICRCODE }).then((data) => data);
 };
 
 //exporting module
-module.exports = searchMICR
+module.exports = searchMICR;

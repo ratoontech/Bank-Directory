@@ -14,14 +14,16 @@ const getMatchingRows = (condition) => {
     });
 };
 
-const searchRecord = (jsonField,keyword) => {
-    return new Promise( (resolve,reject) => {
-        db.search(config.db, config.path, jsonField, keyword,(succ,data) => {
+//function to get records with partially/fully matching field values
+const searchRecord = (jsonField, keyword) => {
+    return new Promise( (resolve, reject) => {
+        db.search(config.db, config.path, jsonField, keyword,(success, data) => {
                 return resolve(data);
         });
     });
 };
 
+//exporting modules (named)
 module.exports = { 
     getMatchingRows,
     searchRecord
