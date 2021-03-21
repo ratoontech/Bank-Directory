@@ -6,7 +6,8 @@ const app = Express();
 
 //default route
 app.get('/', (req, res) => {
-    res.send('Hey, This is Bank Directory API...');
+    //res.send('Hey, This is Bank Directory API...');
+    res.sendFile(__dirname + '/view/search.html');
 });
 
 //importing search endpoint
@@ -16,4 +17,4 @@ const searchEndpoint = require('./routes/search');
 app.use('/search', searchEndpoint);
 
 //app listening
-app.listen(3000);
+app.listen(process.env.PORT || 3000);

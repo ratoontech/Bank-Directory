@@ -34,7 +34,7 @@ searchEndpoint.get('/micr/:micr', (req, res) => {
 });
 
 //search bank details with path param bank name
-searchEndpoint.get('/banks/:bank', (req,res) => {
+searchEndpoint.get('/banks/:bank', (req, res) => {
     searchByField('BANK', req.params.bank).then((result) => res.send(result));
 });
 
@@ -43,9 +43,9 @@ searchEndpoint.get('/branch/:branch', (req, res) => {
     searchByField('BRANCH', req.params.branch).then((result) => res.send(result));
 });
 
-//search bank details with path param city name
-searchEndpoint.get('/city/:city', (req, res) => {
-    searchByField('CITY', req.params.city).then((result) => res.send(result));
+//search bank details with path param state name
+searchEndpoint.get('/state/:state', (req, res) => {
+    searchByField('STATE', req.params.state).then((result) => res.send(result));
 });
 
 //search bank details with path param district name
@@ -53,9 +53,9 @@ searchEndpoint.get('/district/:district', (req, res) => {
     searchByField('DISTRICT', req.params.district).then((result) => res.send(result));
 });
 
-//search bank details with path param state name
-searchEndpoint.get('/state/:state', (req, res) => {
-    searchByField('STATE', req.params.state).then((result) => res.send(result));
+//search bank details with path param city name
+searchEndpoint.get('/city/:city', (req, res) => {
+    searchByField('CITY', req.params.city).then((result) => res.send(result));
 });
 
 //exporting module
