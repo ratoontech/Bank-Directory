@@ -15,9 +15,9 @@ const getMatchingRows = (condition) => {
 };
 
 //function to get records with partially/fully matching field values
-const searchRecord = (jsonField, keyword) => {
+const searchRecord = (field, keyword) => {
     return new Promise( (resolve, reject) => {
-        db.search(config.db, config.path, jsonField, keyword,(success, data) => {
+        db.search(config.db, config.path, field, keyword, (success, data) => {
                 return resolve(data);
         });
     });
