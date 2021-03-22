@@ -4,7 +4,7 @@
   "description": "Directory with bank details can be used for verification of IFSC, MICR, fetching supplementary bank details.",
   "main": "server.js",
   "scripts": {
-    "test": "NA"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
