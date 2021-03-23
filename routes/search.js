@@ -14,7 +14,7 @@ searchEndpoint.get('/', (req, res) => {
     //handling no query param
     if(bank && _branch) {
         searchByField('BANK', bank).then(
-            (banks) => res.send(banks.filter((branch) => branch.BRANCH === _branch.toUpperCase()))
+            (banks) => res.send(banks.filter((branch) => branch.BRANCH.contains(branch.toUpperCase())))
         );
     }
     else {
