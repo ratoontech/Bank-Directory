@@ -3,9 +3,7 @@ const { getMatchingRows } = require('../db/functions/db-banks');
 
 //fetch bank details for ifsc
 const searchIFSC = (IFSC) => {
-    return getMatchingRows({ IFSC }).then((data) => {
-        return data;
-    });
+    return getMatchingRows({ IFSC }).then((data) => data);
 };
 
 //exporting module

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Bank Directory API - Ratoon</title>
+    </head>
+    <body style="font-family: 'Calibri';">
+        <center><h1>Bank Directory API</h1></center>
+        <hr>
+        <p>
+            This API provides you with the INDIAN bank details.
+            You can perform searching bank details with various fields like IFSC, MICR, Bank name, Branch etc.
+        </p>
+        <br>
+        <h3>Endpoints</h3>
+        <p><b>/search?bank={bank}&branch={branch}</b> - Retrieves the bank details with matching bank and branch.</p>
+        <p><b>/search/ifsc/{ifsc}</b> - Retrieves the bank details with matching IFSC.</p>
+        <p><b>/search/micr/{micr}</b> - Retrieves the bank details with matching MICR.</p>
+        <p><b>/search/bank/{bank}</b> - Retrieves the bank details with partial/full matching bank name.</p>
+        <p><b>/search/branch/{branch}</b> - Retrieves the bank details with partial/full matching branch name.</p>
+        <p><b>/search/state/{state}</b> - Retrieves the bank details with partial/full matching state name.</p>
+        <p><b>/search/district/{district}</b> - Retrieves the bank details with partial/full matching district name.</p>
+        <p><b>/search/city/{city}</b> - Retrieves the bank details with partial/full matching city name.</p>
+        <br>
+        <hr>
+        <h5>
+            <span>Made with ❤️ by <a href="www.ratoontechnologies.com">Ratoon Technologies</a></span>
+            <span style="margin-left: 10%;"><a href="https://github.com/ratoontech/Bank-Directory">Github Repo</a></span>
+            <span style="margin-left: 10%;">Let us know your feedback/suggestions/issues :)</span>
+            <span style="margin-left: 10%;">You can even contribute</span>
+        </h5>
+        <h6>Thanks for making our job easy - <a href="https://nodejs.org/en/">node.js,</a>
+                      &nbsp;
+                      <a href="https://expressjs.com/">express,</a>
+                      &nbsp;
+                      <a href="https://www.json.org/json-en.html">json,</a>
+                      &nbsp;
+                      <a href="https://www.npmjs.com/package/electron-db">electron-db.</a>
+        </h6>
+    </body>
+</html>
+

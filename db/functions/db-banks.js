@@ -14,4 +14,17 @@ const getMatchingRows = (condition) => {
     });
 };
 
-module.exports = { getMatchingRows };
+//function to get records with partially/fully matching field values
+const searchRecord = (field, keyword) => {
+    return new Promise( (resolve, reject) => {
+        db.search(config.db, config.path, field, keyword, (success, data) => {
+                return resolve(data);
+        });
+    });
+};
+
+//exporting modules (named)
+module.exports = { 
+    getMatchingRows,
+    searchRecord
+};
