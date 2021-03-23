@@ -4,7 +4,7 @@ const db = require('electron-db');
 //db config
 const config = {
     db: 'DB_Banks',
-    path: '.\\db\\data\\'
+    path: __dirname.replace('functions', 'data')
 };
 
 //function to get matching rows with a condition
