@@ -56,7 +56,7 @@ searchEndpoint.get('/bank', (req, res) => {
 });
 
 //search bank details with path param bank name
-searchEndpoint.get('/banks/:bank', (req, res) => {
+searchEndpoint.get('/bank/:bank', (req, res) => {
     searchByField('BANK', req.params.bank).then((result) => res.send(result));
 });
 
